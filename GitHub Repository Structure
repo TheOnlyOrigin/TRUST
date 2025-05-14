@@ -1,0 +1,19 @@
+TRUST/
+├── .github/
+│   └── workflows/
+│       └── cert-validation.yml       # Automated certificate checks
+├── scripts/
+│   ├── create_root_ca.sh             # Root CA generator
+│   ├── sign_server_cert.sh           # Server cert signer
+│   └── revoke_cert.sh                # Revocation script (optional)
+├── config/
+│   ├── root-ca.cnf                   # OpenSSL config for Root CA
+│   └── server-ext.cnf                # SAN/extensions template
+├── vault/
+│   ├── index.html                    # Trust Vault landing page
+│   ├── TheOriginRootCA.crt           # Public Root CA cert
+│   └── guides/                       # OS-specific installation guides
+├── server/
+│   └── vpn.iamtheorigin.org/         # Example VPN certs (auto-generated)
+├── README.md                         # Project docs
+└── .gitignore                        # Excludes keys, CSRs, etc.
