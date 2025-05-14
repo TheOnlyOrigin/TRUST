@@ -1,0 +1,24 @@
+name: Deploy Trust Vault Static Site
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'vault/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./vault
+          cname: trust.iamtheorigin.org
